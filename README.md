@@ -7,24 +7,29 @@ license: openrail++
 language:
 - en
 ---
+# Controlnet QR Code Monster v2 For SD-1.5
 
-# Controlnet QR Code Monster v1 For SD-1.5
-
-![QR code in shape of a tree, reading "https://huggingface.co/monster-labs"](images/tree.png)
+![QR code in shape of a blue monster, reading "https://qrcode.monster"](images/monster.png)
 
 ##  Model Description
 
 This model is made to generate creative QR codes that still scan.
 Keep in mind that not all generated codes might be readable, but you can try different parameters and prompts to get the desired results.
 
-You can try it in a space [Try it here!](https://huggingface.co/spaces/monster-labs/Controlnet-QRCode-Monster-V1) or use it localy.
+**NEW VERSION**
 
-We're already working on v2, which is much more powerful, you can try [an early version here](https://qrcodemonster.art) ! OR just scan the monster below !
-![QR code in shape of a blue monster, reading "https://qrcodemonster.art"](images/monster.png)
+Introducing the upgraded version of our model - Controlnet QR code Monster v2.
+V2 is a huge upgrade over v1, for scannability AND creativity.
 
-## How to use
+QR codes can now seamlessly blend the image by using a gray-colored background (#808080).
 
-- **Condition**: QR codes are passed as condition images with a module size of 16px. Use a higher error correction level to make it easier to read (sometimes a lower level can be easier to read if smaller in size).
+As with the former version, the readability of some generated codes may vary, however playing around with parameters and prompts could yield better results.
+
+You can find in in the `v2/` subfolder.
+
+## How to Use
+
+- **Condition**: QR codes are passed as condition images with a module size of 16px. Use a higher error correction level to make it easier to read (sometimes a lower level can be easier to read if smaller in size). Use a gray background for the rest of the image to make the code integrate better.
 
 - **Prompts**: Use a prompt to guide the QR code generation. The output will highly depend on the given prompt. Some seem to be really easily accepted by the qr code process, some will require careful tweaking to get good results.
 
@@ -34,19 +39,20 @@ We're already working on v2, which is much more powerful, you can try [an early 
 
 ### Tips
 
-- You might need to generate multiple QR codes with the same parameters to get a readable output (our new model greatly improves this).
+- For an optimally readable output, try generating multiple QR codes with similar parameters, then choose the best ones.
 
-- Use the Image-to-Image feature to improve the readability of a QR code:
+- Use the Image-to-Image feature to improve the readability of a generated QR code:
   - Decrease the denoising strength to retain more of the original image.
   - Increase the controlnet guidance scale value for better readability.
   A typical workflow for "saving" a code would be :
   Max out the guidance scale and minimize the denoising strength, then bump the strength until the code scans.
 
-## Example outputs
+## Example Outputs
 
-Here are some examples of creative and readable QR codes generated using this model:
+Here are some examples of creative, yet scannable QR codes produced by our model:
 
-![A gothic sculpture in shape of a QR code, reading "test"](images/skull_test.png)
-![City ruins with a building facade in shape of a QR code, reading "sd is cool"](images/architecture.png)
+![City ruins with a building facade in shape of a QR code, reading "https://qrcode.monster"](images/architecture.png)
+![QR code in shape of a tree, reading "https://qrcode.monster"](images/tree.png)
+![A gothic sculpture in shape of a QR code, reading "https://qrcode.monster"](images/skulls.png)
 
 Feel free to experiment with prompts, parameters, and the Image-to-Image feature to achieve the desired QR code output. Good luck and have fun!
